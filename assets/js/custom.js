@@ -74,7 +74,7 @@
 
 	(function init() {
 	  function getTimeRemaining(endtime) {
-	    var t = new Date("Oct 10, 2021 01:00:00").getTime() - Date.parse(new Date());
+	    var t = new Date("Dec 1, 2021 01:00:00").getTime() - Date.parse(new Date());
 	    var seconds = Math.floor((t / 1000) % 60);
 	    var minutes = Math.floor((t / 1000 / 60) % 60);
 	    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
