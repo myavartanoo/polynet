@@ -133,11 +133,11 @@ we propose a ... </p>
           </div>
         </div>
         <div class="continer">  
-          <button class="btn" onclick="window.open('https://arxiv.org/abs/2108.08653','_blank')"><img src="assets/images/arxiv.png" alt="Snow" style="height:50px;"> </button>
-          <button class="btn" onclick="window.open('https://www.researchgate.net/publication/354004542_3DIAS_3D_Shape_Reconstruction_with_Implicit_Algebraic_Surfaces','_blank')"><img src="assets/images/researchgate.png" alt="Snow" style="height:50px;"> </button>
-          <button class="btn" onclick="window.open('https://github.com/myavartanoo/3DIAS_PyTorch','_blank')"><img src="assets/images/github.jpg" alt="Snow" style="height:50px;"> </button>
+          <button class="btn" onclick="window.open('#','_blank')"><img src="assets/images/arxiv.png" alt="Snow" style="height:50px;"> </button>
+          <button class="btn" onclick="window.open('#','_blank')"><img src="assets/images/researchgate.png" alt="Snow" style="height:50px;"> </button>
+          <button class="btn" onclick="window.open('https://github.com/myavartanoo/PolyNet_PyTorch','_blank')"><img src="assets/images/github.jpg" alt="Snow" style="height:50px;"> </button>
           <button class="btn" onclick="window.open('#','_blank')"><img src="assets/images/poster.png" alt="Snow" style="height:50px;"></button></div>
-          <button class="btn" onclick="window.open('https://scholar.google.com/citations?user=BirSpXsAAAAJ&hl=en','_blank')"><img src="assets/images/gscholar.png" alt="Snow" style="height:50px;"></button></div>
+          <button class="btn" onclick="window.open('#','_blank')"><img src="assets/images/gscholar.png" alt="Snow" style="height:50px;"></button></div>
       </div>
     </div>
   </section>
@@ -152,8 +152,9 @@ we propose a ... </p>
         <div class="col-md-4 align-self-center">
           <div class="left-content">
             <h2>Presentation</h2>
-            <h4>Watch the video of our presentation in <em>ICCV2021</em>.</h4>            
-            <p style="color:#8E7618;font-size:20px"> We propose a constrained implicit algebraic surface as the primitive with few learnable coefficients and higher geometrical complexities and a deep neural network to produce these primitives.</p>
+            <h4>Watch the video of our presentation in <em>3DV2021</em>.</h4>            
+            <p style="color:#8E7618;font-size:20px"> We propose a DNN-based method (PolyNet) and a specific polygon mesh representation (PolyShape) with a multi-resolution structure.
+PolyNet contains two operations; (1) a polynomial convolution (PolyConv) operation with learnable coefficients, which learns continuous distributions as the convolutional filters to share the weights across different vertices, and (2) a polygonal pooling (PolyPool) procedure by utilizing the multi-resolution structure of PolyShape to aggregate the features in a much lower dimension.</p>
             <p style="font-family:Times;color:#F75D59;font-size:16px"> <br>Whatch more videos on our YouTube channel.</br></p>
             <div class="container">  <button class="btn" onclick="location.href='#'"><img src="assets/images/youtube.png" alt="Snow" style="height:60px;"> </button></div>
           </div>
@@ -174,7 +175,7 @@ we propose a ... </p>
         <div class="col-md-12 col-xs-12">
           <div class="continer centerIt">
             <div>
-              <h4>The remaining <em>time</em> to our presentation in <em>ICCV2021</em>.</h4>
+              <h4>The remaining <em>time</em> to our presentation in <em>3DV2021</em>.</h4>
               <div class="counter">
 
                 <div class="days">
@@ -223,44 +224,68 @@ we propose a ... </p>
         <div class="col-md-12">
           <div id='tabs'>
             <ul>
-              <li><a href='#tabs-1'>Reconstruction</a></li>
-              <li><a href='#tabs-2'>Segmentation</a></li>
-              <li><a href='#tabs-3'>Primitives</a></li>
+              <li><a href='#tabs-1'>PolyShapes</a></li>
+              <li><a href='#tabs-2'>Distributions</a></li>
+              <li><a href='#tabs-3'>PolyConv</a></li>
+              <li><a href='#tabs-4'>Classification</a></li>
+              <li><a href='#tabs-5'>Retrievals</a></li>
             </ul>
             <section class='tabs-content'>
               <article id='tabs-1'>
                 <div class="row">
                   <div class="col-md-6">
-                    <img src="assets/images/qualitative.png" alt="">
+                    <img src="assets/images/polyshapes.png" alt="">
                   </div>
                   <div class="col-md-6">
-                    <h4>Qualitative Comaprision</h4>
-                    <p>Qualitative comparison on single RGB image 3D shape reconstruction. SIF, AtlasNet, OccNet, CvxNet, and our 3DIAS output reconstructed 3D shape from the given RGB image. Comparison with other methods for the samples shown in CvxNet.</p>
+                    <h4>PolyShape Representation</h4>
+                    <p>PolyShape processing results on some samples of ModelNet-10 dataset based on √3-subdivision. Sqrt1 to Sqrt3 refer to the output of the PolyShape procedure after each level of subdivision. Note that V and F refer to the number of vertices and faces for each shape.</p>
                   </div>
                 </div>
               </article>
               <article id='tabs-2'>
                 <div class="row">
                   <div class="col-md-6">
-                    <img src="assets/images/sem2.png" alt="">
+                    <img src="assets/images/distributions.png" alt="">
                   </div>
                   <div class="col-md-6">
-                    <h4>Complexity of primitives</h4>
-                    <p>Qualitative results on unsupervised semantic segmentation. We visualize the results of 3DIAS for some samples in the category of airplane.</p>
+                    <h4>Probability Distributions/h4>
+                    <p>Joint and marginal distributions. Visualization of (a) the learned joint distributions and (b) the marginal distributions approximated by polynomial functions of degreed 2 on the ModelNet-10 with the √3-subdivision.</p>
                   </div>
                 </div>
               </article>
               <article id='tabs-3'>
                 <div class="row">
                   <div class="col-md-6">
-                    <img src="assets/images/complex.png" alt="">
+                    <img src="assets/images/polyconv.png" alt="">
                   </div>
                   <div class="col-md-6">
-                    <h4>Unsupervised Semantics Segmentation</h4>
-                    <p>The complexity of our primitives. The first and the second rows show the reconstructed shapes and their corresponding primitives for two samples. The proposed primitive can effectively present curved and torus shapes.</p>
+                    <h4>Polynomial  Convolution (PolyConv)</h4>
+                    <p>Classification accuracy (Acc%), testing time, andnumber  of  parameters  in  only  convolution  layers  on  theModelNet-10 with both subdivision strategies for the var-ious convolution operations in PolyNet.</p>
                   </div>
                 </div>
-              </article>              
+              </article>  
+              <article id='tabs-4'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="assets/images/classification.png" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>3D Shape Classification</h4>
+                    <p>Classification  accuracy  (Acc%)  and  mean  Aver-age Precision (mAP%) of PolyNet compared to the state-of-the-art methods based on different representations on theModelNet-10 and the ModelNet-40 datasets.</p>
+                  </div>
+                </div>
+              </article>  
+              <article id='tabs-5'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="assets/images/retrievals.png" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>3D Shape Retrieval</h4>
+                    <p>The retrieved shapes for the given queries using PolyNet. The blue models in the first column are the queries. The retrieved results in green are from the same category as the query, while the results in red are from different categories. From left to right, the results are ordered with a descending rank.</p>
+                  </div>
+                </div>
+              </article>  
             </section>
           </div>
         </div>
